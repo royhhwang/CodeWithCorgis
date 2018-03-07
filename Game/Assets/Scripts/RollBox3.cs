@@ -19,6 +19,8 @@ public class RollBox3 : MonoBehaviour {
     Quaternion toRotation;                
     public bool isStanding;
 
+    public GameManager gameManager;
+
     // Use this for initialization
     void Start()
     {
@@ -50,7 +52,8 @@ public class RollBox3 : MonoBehaviour {
             transform.rotation = fromRotation;                                          
             setRadius();                                                                
             rotationTime = 0;                                                           
-            isRotate = true;                                                            
+            isRotate = true;
+            gameManager.UpMoveCounter();
         }
     }
 
