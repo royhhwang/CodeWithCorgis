@@ -5,6 +5,7 @@ using UnityEngine;
 public class WinPad : MonoBehaviour {
 
     public RollBox3 player;
+    public GameManager gameManager;
 
 
     private void OnTriggerEnter(Collider collider)
@@ -12,6 +13,7 @@ public class WinPad : MonoBehaviour {
         if (player.isStanding)
         {
             Debug.Log("Win!");
+            gameManager.isGameOver = true;
         }
     }
 }
