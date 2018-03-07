@@ -18,6 +18,7 @@ public class RollBox3 : MonoBehaviour {
     Quaternion fromRotation;                
     Quaternion toRotation;                
     public bool isStanding;
+    
 
     public GameManager gameManager;
 
@@ -30,31 +31,34 @@ public class RollBox3 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        float x = 0;
-        float y = 0;
-
-        x = Input.GetAxisRaw("Vertical");
-        if (x == 0)
+        if (!gameManager.isGameOver)
         {
-            y = -Input.GetAxisRaw("Horizontal");
-        }
+            float x = 0;
+            float y = 0;
+
+            x = Input.GetAxisRaw("Vertical");
+            if (x == 0)
+            {
+                y = -Input.GetAxisRaw("Horizontal");
+            }
 
 
-        if ((x != 0 || y != 0) && !isRotate)
-        {
-            directionX = y;                                                             
-            directionZ = x;                                                             
-            startPos = transform.position;                                              
-            fromRotation = transform.rotation;                                          
-            transform.Rotate(directionZ * 90, 0, directionX * 90, Space.World);     
-            toRotation = transform.rotation;                                            
-            transform.rotation = fromRotation;                                          
-            setRadius();                                                                
-            rotationTime = 0;                                                           
-            isRotate = true;
-            gameManager.UpMoveCounter();
+            if ((x != 0 || y != 0) && !isRotate)
+            {
+                directionX = y;
+                directionZ = x;
+                startPos = transform.position;
+                fromRotation = transform.rotation;
+                transform.Rotate(directionZ * 90, 0, directionX * 90, Space.World);
+                toRotation = transform.rotation;
+                transform.rotation = fromRotation;
+                setRadius();
+                rotationTime = 0;
+                isRotate = true;
+                gameManager.UpMoveCounter();
+            }
         }
+        
     }
 
     void FixedUpdate()
