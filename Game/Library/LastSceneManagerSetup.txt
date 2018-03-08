@@ -1,7 +1,1 @@
-sceneSetups:
-- path: Assets/Lvl 1.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/Menu/Scenes/Menu 3D.unity
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
