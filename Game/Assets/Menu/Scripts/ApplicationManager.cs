@@ -6,7 +6,7 @@ public class ApplicationManager : MonoBehaviour
 {
     public void GameStart()
     {
-        SceneManager.LoadScene("Reblox", LoadSceneMode.Single);
+        SceneManager.LoadScene("Lvl 1", LoadSceneMode.Single);
     }
 
     public void Quit()
