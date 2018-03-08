@@ -175,8 +175,6 @@ public class RollBox3 : MonoBehaviour {
     public void Respawn()
     {
         
-        //this.transform.rotation = Quaternion.identity;
-        //this.transform.position = new Vector3(myPos.position.x, myPos.position.y, myPos.position.z);
         gameManager.isFalling = false;
     }
 }

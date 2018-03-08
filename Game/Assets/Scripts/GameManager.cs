@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public bool isGameOver;
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour {
     public Text moves;
     public Text timeLeft;
     public static float time = 99;
+    public static int lvl = 1;
+
 	// Use this for initialization
 	void Start () {
         isFalling = false;
@@ -35,5 +38,11 @@ public class GameManager : MonoBehaviour {
     {
         time -= Time.deltaTime;
         timeLeft.text = time.ToString("f2");
+    }
+
+    public void LoadNextLevel()
+    {
+        lvl++;
+        SceneManager.LoadScene("Lvl "+lvl, LoadSceneMode.Single);
     }
 }

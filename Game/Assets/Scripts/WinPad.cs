@@ -14,6 +14,7 @@ public class WinPad : MonoBehaviour {
         {
             Debug.Log("Win!");
             gameManager.isGameOver = true;
+            gameManager.LoadNextLevel();
         }
     }
 }
