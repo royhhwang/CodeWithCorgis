@@ -1341,6 +1341,11 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 16706198}
+    - target: {fileID: 23907631288442984, guid: 2a6e9d18707542342a50988f359bfbf6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c33ad23caddc5b4aac7f52d05d6eba7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a6e9d18707542342a50988f359bfbf6, type: 2}
   m_IsPrefabParent: 0
@@ -2683,6 +2688,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102793822987180, guid: 71c0959af090ff14489b84914f9ce504,
+        type: 2}
+      propertyPath: m_Text
+      value: F I N I S H !
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71c0959af090ff14489b84914f9ce504, type: 2}

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool isFalling;
     public static bool showResults = false;
     public static bool isGameWon = false;
+    public JSONtoClass Data;
 
     public static int movesMade = 0;
     public Text moves;

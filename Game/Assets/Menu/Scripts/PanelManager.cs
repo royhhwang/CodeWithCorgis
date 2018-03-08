@@ -104,6 +104,8 @@ public class PanelManager : MonoBehaviour
 
     public void DestroyAll()
     {
+        GameObject go = GameObject.Find("KodieWink");
+        Destroy(go.gameObject);
         Invoke("GoAwayUi",1.0f);
     }
 
