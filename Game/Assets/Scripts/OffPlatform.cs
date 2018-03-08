@@ -8,16 +8,6 @@ public class OffPlatform : MonoBehaviour {
     public RollBox3 player;
     public GameManager gameManager;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     private void OnTriggerEnter(Collider other)
     {
         player.GetComponent<Rigidbody>().useGravity = true;

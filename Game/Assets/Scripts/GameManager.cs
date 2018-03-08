@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public Text moves;
     public Text timeLeft;
     public static float time = 99;
-    public static int lvl = 1;
+    public static int lvl = 2;
 
 	// Use this for initialization
 	void Start () {
