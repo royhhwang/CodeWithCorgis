@@ -1449,11 +1449,6 @@ Prefab:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 114738122036579942, guid: 889aacf16413be24da430bb86b209d59,
-        type: 2}
-      propertyPath: timeGoneBy
-      value: 
-      objectReference: {fileID: 1714404064}
     m_RemovedComponents:
     - {fileID: 81276468166770106, guid: 889aacf16413be24da430bb86b209d59, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 889aacf16413be24da430bb86b209d59, type: 2}

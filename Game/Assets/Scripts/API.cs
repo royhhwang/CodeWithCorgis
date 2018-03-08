@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
+[System.Serializable]
 
 public class API : MonoBehaviour {
 
-    private const string URL = "http://techfair-data.comparably.com/culture/indeed.json";
+    private const string URL = "http://techfair-data.comparably.com/culture/yoga.json";
     public JSONtoClass Data;
-    public Text showData;
     
     
     void Start()
@@ -18,7 +16,7 @@ public class API : MonoBehaviour {
 
     public void Request()
     {
-       
+        Debug.Log("Requesting API...");
         WWW request = new WWW(URL);
         StartCoroutine(OnResponse(request));
     }
@@ -27,13 +25,14 @@ public class API : MonoBehaviour {
     {
         yield return req;
         Data = CreateFromJSON(req.text);
-        showData.text = Data.company.name;   
-               
+        Debug.Log(Data.company.name);
+        
+        
     }
 
     public static JSONtoClass CreateFromJSON(string jsonString)
     {
-        
+        Debug.Log("running");
         return JsonUtility.FromJson<JSONtoClass>(jsonString);
 
     }
