@@ -294,6 +294,8 @@
     <Compile Include="Assets\Menu\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Menu\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\OffPlatform.cs" />
+    <Compile Include="Assets\Scripts\Restart.cs" />
     <Compile Include="Assets\Scripts\RollBox3.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\WinPad.cs" />

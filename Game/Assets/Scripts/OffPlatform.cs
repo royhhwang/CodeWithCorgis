@@ -22,5 +22,6 @@ public class OffPlatform : MonoBehaviour {
         Debug.Log("You fell off!");
         player.GetComponent<Rigidbody>().useGravity = true;
         gameManager.isGameOver = true;
+        
     }
 }
