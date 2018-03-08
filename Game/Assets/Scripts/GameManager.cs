@@ -5,18 +5,23 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public bool isGameOver;
+    public bool isFalling;
 
-    public int movesMade;
+    public static int movesMade = 0;
     public Text moves;
+    public Text timeLeft;
+    public static float time = 99;
 	// Use this for initialization
 	void Start () {
+        isFalling = false;
         isGameOver = false;
-        movesMade = 0;
-	}
+        moves.text = movesMade.ToString() + " moves made";
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        TimeTick();
 	}
 
     public void UpMoveCounter ()
@@ -24,5 +29,11 @@ public class GameManager : MonoBehaviour {
         movesMade++;
         moves.text = movesMade.ToString() + " moves made";
 
+    }
+
+    void TimeTick()
+    {
+        time -= Time.deltaTime;
+        timeLeft.text = time.ToString("f2");
     }
 }

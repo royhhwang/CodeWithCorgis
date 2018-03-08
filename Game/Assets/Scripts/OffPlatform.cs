@@ -19,9 +19,7 @@ public class OffPlatform : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("You fell off!");
         player.GetComponent<Rigidbody>().useGravity = true;
-        gameManager.isGameOver = true;
-        
+        gameManager.isFalling = true;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class RollBox3 : MonoBehaviour {
 
@@ -18,9 +19,16 @@ public class RollBox3 : MonoBehaviour {
     Quaternion fromRotation;                
     Quaternion toRotation;                
     public bool isStanding;
+
+    public Transform myPos;
     
 
     public GameManager gameManager;
+
+    private void Awake()
+    {
+        this.transform.position = new Vector3(myPos.position.x, myPos.position.y, myPos.position.z);
+    }
 
     // Use this for initialization
     void Start()
@@ -31,8 +39,9 @@ public class RollBox3 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!gameManager.isGameOver)
+        if (!gameManager.isGameOver && !gameManager.isFalling)
         {
+            
             float x = 0;
             float y = 0;
 
@@ -161,6 +170,14 @@ public class RollBox3 : MonoBehaviour {
             isStanding = false;
         }
        
+    }
+
+    public void Respawn()
+    {
+        
+        //this.transform.rotation = Quaternion.identity;
+        //this.transform.position = new Vector3(myPos.position.x, myPos.position.y, myPos.position.z);
+        gameManager.isFalling = false;
     }
 }
 
