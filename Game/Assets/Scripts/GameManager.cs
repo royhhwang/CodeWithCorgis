@@ -44,5 +44,11 @@ public class GameManager : MonoBehaviour {
     {
         lvl++;
         SceneManager.LoadScene("Lvl "+lvl, LoadSceneMode.Single);
+        
+    }
+
+    public void WaitThenLoad()
+    {
+        Invoke("LoadNextLevel", 2.0f);
     }
 }
