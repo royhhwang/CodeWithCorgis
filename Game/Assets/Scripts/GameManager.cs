@@ -13,10 +13,13 @@ public class GameManager : MonoBehaviour {
     public static int movesMade = 0;
     public Text moves;
     public Text timeGoneBy;
-    public API api;
+  
     public static float time = 0;
     public static int lvl = 1;
     int numberOfLevels = 2;
+    int baseScore = 25;
+
+    public int yourScore;
 
     
 
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour {
         else
         {
             ShowResultsText();
-            api.ShowResults();
+           
         }
         
         
@@ -91,7 +94,7 @@ public class GameManager : MonoBehaviour {
 
     public void ShowResultsText ()
     {
-      
+        yourScore = ((int)time + movesMade)-baseScore;
         timeGoneBy.text = "Time Used: "+time.ToString("f2");
         moves.text = "# of Moves Made: " + movesMade.ToString();
     }

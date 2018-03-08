@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class API : MonoBehaviour {
 
-    private const string URL = "http://techfair-data.comparably.com/culture/indeed.json";
+    private const string URL = "https://gist.githubusercontent.com/hjayyang94/73895232eea9cf1415509e21f6582381/raw/060d66d09be0c0d2a8967004f6eb9a589f607d55/indeed.json";
     public JSONtoClass Data;
     public Text showData;
+    public GameManager gameManager;
+
+    int additiveScore;
     
     
-    void Start()
+    void Awake()
     {
         Request();
     }
@@ -27,17 +31,18 @@ public class API : MonoBehaviour {
     {
         yield return req;
         Data = CreateFromJSON(req.text);
-        Debug.Log(req.text);
-        Debug.Log(Data);
-        Debug.Log(Data.Company.url);
-        Debug.Log(Data.company.name);
-        Debug.Log(Data.company.location.city);
-        Debug.Log(Data.company);
-        Debug.Log(Data.culture);
-        Debug.Log(Data.culture.happiness);
-        Debug.Log(Data.culture.happiness.grade);
-        Debug.Log(Data.culture.happiness.score);
-               
+        
+        int companyScore = Int32.Parse((Data.culture.happiness.score.Substring(4, 1)));
+
+        additiveScore = gameManager.yourScore - companyScore;
+
+        if (additiveScore <= 1)
+        {
+            additiveScore = 1;
+        }
+
+        showData.text = "Compared to others, your are the top "+additiveScore.ToString()+"%!";
+
     }
 
     public static JSONtoClass CreateFromJSON(string jsonString)
@@ -47,8 +52,4 @@ public class API : MonoBehaviour {
 
     }
 
-    public void ShowResults()
-    {
-        showData.text = Data.culture.team.grade;
-    }
 }
