@@ -12,9 +12,9 @@ public class WinPad : MonoBehaviour {
     {
         if (player.isStanding)
         {
-            Debug.Log("Win!");
             gameManager.isGameOver = true;
-            gameManager.LoadNextLevel();
+         
+            gameManager.WaitThenLoad();
         }
     }
 }
