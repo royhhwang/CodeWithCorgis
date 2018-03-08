@@ -9,5 +9,11 @@ EditorBuildSettings:
     path: Assets/Menu 3D.unity
     guid: c2238596aeb058b4a8493192bbae86b5
   - enabled: 1
-    path: Assets/Lvl 1.unity
+    path: Assets/Lvl 1/Lvl 1.unity
     guid: b280b0fbc6e183a4aa6854f145ca88dd
+  - enabled: 1
+    path: Assets/Lvl 3/Results.unity
+    guid: 52383983f23008e48a22642c91deea24
+  - enabled: 1
+    path: Assets/Lvl 2/Lvl 2.unity
+    guid: 649c7ba38905b61468d664ced7a1c4b2
