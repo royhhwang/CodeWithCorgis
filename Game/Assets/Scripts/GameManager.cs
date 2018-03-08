@@ -17,13 +17,13 @@ public class GameManager : MonoBehaviour {
     int numberOfLevels = 3;
     bool resultsShown = false;
 
+    
 
 	// Use this for initialization
 	void Start () {
         isFalling = false;
         isGameOver = false;
         moves.text = movesMade.ToString() + " moves made";
-        
         
     }
 	
