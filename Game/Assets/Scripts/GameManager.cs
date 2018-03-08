@@ -8,48 +8,45 @@ public class GameManager : MonoBehaviour {
     public bool isGameOver;
     public bool isFalling;
     public static bool showResults = false;
+    public static bool isGameWon = false;
 
     public static int movesMade = 0;
     public Text moves;
-    public Text timeLeft;
-    public static float time = 99;
+    public Text timeGoneBy;
+    public static float time = 0;
     public static int lvl = 1;
     int numberOfLevels = 3;
-    bool resultsShown = false;
 
     
 
 	// Use this for initialization
 	void Start () {
+
         isFalling = false;
         isGameOver = false;
-        moves.text = movesMade.ToString() + " moves made";
+
+        if (!showResults) {
+            moves.text = movesMade.ToString() + " moves made";
+        }
+        else
+        {
+            ShowResultsText();
+        }
+        
         
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (!showResults)
+        if (!isGameWon)
         {
-            if (time > 0)
-            {
-                TimeTick();
-            }
-            if (time <= 0.001)
-            {
-                showResults = true;
-                SceneManager.LoadScene("Results", LoadSceneMode.Single);
-            }
-
+            TimeTick();
         }
-
-        if (!resultsShown)
+        else if (!showResults)
         {
-            resultsShown = true;
-            ShowResultsText();       
+            showResults = true;
         }
-       
 	}
 
     public void UpMoveCounter ()
@@ -60,36 +57,40 @@ public class GameManager : MonoBehaviour {
 
     void TimeTick()
     {
-        time -= Time.deltaTime;
-        timeLeft.text = time.ToString("f2");
+        time += Time.deltaTime;
+        timeGoneBy.text = time.ToString("f2");
     }
 
     public void LoadNextLevel()
+    {
+        if (!isGameWon)
+        {
+            SceneManager.LoadScene("Lvl " + lvl, LoadSceneMode.Single);
+        }
+    }
+
+    public void WaitThenLoad()
     {
         lvl++;
         isGameOver = false;
 
         if (lvl <= numberOfLevels)
         {
-            SceneManager.LoadScene("Lvl " + lvl, LoadSceneMode.Single);
+            Invoke("LoadNextLevel", 2.0f);
         }
         else
         {
-            showResults = true;
+            isGameWon = true;
+
             SceneManager.LoadScene("Results", LoadSceneMode.Single);
         }
-        
-        
+       
     }
 
-    public void WaitThenLoad()
+    public void ShowResultsText ()
     {
-        Invoke("LoadNextLevel", 2.0f);
-    }
-
-    void ShowResultsText ()
-    {
-        timeLeft.text = "Time Left: "+time.ToString("f2");
+      
+        timeGoneBy.text = "Time Used: "+time.ToString("f2");
         moves.text = "# of Moves Made: " + movesMade.ToString();
     }
 }

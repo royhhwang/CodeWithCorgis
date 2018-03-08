@@ -299,7 +299,11 @@
     <Compile Include="Assets\Scripts\OffPlatform.cs" />
     <Compile Include="Assets\Scripts\Restart.cs" />
     <Compile Include="Assets\Scripts\RollBox3.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\Scripts\StageManager.cs" />
+=======
+    <Compile Include="Assets\Scripts\ShowResults.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\WinPad.cs" />
   </ItemGroup>
