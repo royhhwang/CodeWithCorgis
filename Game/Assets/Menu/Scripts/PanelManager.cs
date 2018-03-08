@@ -105,7 +105,6 @@ public class PanelManager : MonoBehaviour
     public void DestroyAll()
     {
         Invoke("GoAwayUi",1.0f);
-        Debug.Log("im so tired");
     }
 
     public void GoAwayUi()

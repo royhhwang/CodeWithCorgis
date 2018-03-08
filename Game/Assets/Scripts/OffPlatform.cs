@@ -7,7 +7,6 @@ public class OffPlatform : MonoBehaviour {
 
     public RollBox3 player;
     public GameManager gameManager;
-    
 
     private void OnTriggerEnter(Collider other)
     {
