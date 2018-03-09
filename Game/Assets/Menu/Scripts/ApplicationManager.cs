@@ -27,12 +27,8 @@ public class ApplicationManager : MonoBehaviour
         SceneManager.LoadScene("Lvl 1", LoadSceneMode.Single);
     }
 
-    public void Quit()
+    public void AboutUs()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-		Application.Quit();
-#endif
+        Application.OpenURL("http://www.codewithcorgis.com/");
     }
 }
