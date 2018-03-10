@@ -7,8 +7,12 @@ public class Timer : MonoBehaviour {
 
     public float timeRemaining = 99;
     public Text timerText;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+    void Start () {
         timerText = GetComponent<Text>();
 	}
 	

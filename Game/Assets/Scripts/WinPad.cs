@@ -6,19 +6,20 @@ public class WinPad : MonoBehaviour {
 
     public RollBox3 player;
     public GameManager gameManager;
-    Animator anim;
+    public StageManager stageClear;
 
-    private void Awake()
+    public void Start()
     {
-        anim = GetComponent<Animator>();
+        stageClear.clear = false;
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (player.isStanding)
         {
-            Debug.Log("Win!");
             gameManager.isGameOver = true;
+            gameManager.WaitThenLoad();
+            stageClear.clear = true;
         }
     }
 }
