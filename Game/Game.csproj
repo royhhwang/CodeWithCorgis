@@ -297,7 +297,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\beginGame.cs" />
     <Compile Include="Assets\Menu\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Menu\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Menu\Scripts\ChangeColor.cs" />
@@ -309,13 +308,10 @@
     <Compile Include="Assets\Menu\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\Menu\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Menu\Scripts\TiltWindow.cs" />
-    <Compile Include="Assets\Scripts\API.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\JSONtoClass.cs" />
     <Compile Include="Assets\Scripts\OffPlatform.cs" />
     <Compile Include="Assets\Scripts\Restart.cs" />
     <Compile Include="Assets\Scripts\RollBox3.cs" />
-    <Compile Include="Assets\Scripts\StageManager.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\WinPad.cs" />
   </ItemGroup>
