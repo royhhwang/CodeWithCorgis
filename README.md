@@ -10,7 +10,8 @@
 
 ## Overview
 
-    Created in a day for the LA Hackathon 2018, JobaScript is a simple puzzle game that tests the players critical thinking in time sensitive environments.
+    Created in a day for the LA Hackathon 2018, JobaScript is a simple puzzle game that tests the players critical 
+    thinking in time sensitive environments.
     The goal is to complete the puzzle in as few moves as possible.
     The player is evaluated based on moves taken and time spent.
 
